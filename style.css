@@ -7,6 +7,11 @@
   font-family: "fullhouse";
   src: url("font/fullhouse-webfont.woff") format("woff");
 }
+
+@font-face {
+  font-family: "Ubuntu_mono_regular";
+  src: url("font/ubuntu/ubuntumono-r-webfont.woff2") format("woff2");
+}
 * {
   margin: 0;
   padding: 0;
@@ -28,6 +33,9 @@ h1 {
   transform: translate(0%, 300%);
   color: #279db8;
   text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 h2 {
@@ -40,18 +48,18 @@ h2 {
 }
 h3 {
   padding-bottom: 10px;
-  font-family: fullhouse;
+  font-family: Ubuntu_mono_regular;
   font-size: 1.4rem;
 }
 h4 {
   font-size: 1.3rem;
-  font-family: fullhouse;
+  font-family: Ubuntu_mono_regular;
 }
 
 p {
   padding-bottom: 1.5%;
   font-size: 1.2rem;
-  font-family: fullhouse;
+  font-family: Ubuntu_mono_regular;
 }
 
 a:link {
@@ -64,14 +72,14 @@ ul {
 ul li {
   list-style: none;
   margin-right: 1em;
-  font-family: fullhouse;
+  font-family: Ubuntu_mono_regular;
   font-size: 1.2rem;
 }
 .textbox {
   -webkit-box-shadow: 2px 2px 4px 5px #ccc; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
   -moz-box-shadow: 2px 2px 4px 5px #ccc; /* Firefox 3.5 - 3.6 */
   box-shadow: 2px 2px 4px 5px #ccc; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-
+  height: 100%;
   padding: 10px;
 }
 
@@ -80,6 +88,21 @@ ul li {
   -webkit-box-shadow: 2px 2px 4px 5px #1b6a7c; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
   -moz-box-shadow: 2px 2px 4px 5px #1b6a7c; /* Firefox 3.5 - 3.6 */
   box-shadow: 2px 2px 4px 5px #1b6a7c; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+.iframe_container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+
+.resp_iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 /** transform text on hover *
@@ -119,6 +142,10 @@ ul li {
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(5, 1fr);
   padding-bottom: 4%;
+
+  grid-template-rows: 25vh 35vh 35vh;
+  grid-gap: 2.5vh;
+  grid-template-columns: 22vw repeat(3, 1fr) 22vw;
 }
 
 .logo {
@@ -141,10 +168,10 @@ ul li {
 .svg {
   background-size: cover;
   border-radius: 50%;
-  min-width: 30vh;
-  min-height: 30vh;
   justify-self: center;
   position: relative;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .video {
@@ -176,7 +203,8 @@ ul li {
   grid-area: process;
   background-image: url(images/gif/idea.gif);
   border-radius: 50%;
-  min-width: 30vh;
+  min-width: 100%;
+  min-height: 100%;
   justify-self: center;
   background-position: center;
   background-repeat: no-repeat;
@@ -304,27 +332,29 @@ ul li {
 #svgId {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  position: relative;
 }
 #svgId img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
+}
+#svgId svg {
+  position: absolute;
 }
 
 #svgId .column1 {
-  /* position: absolute; */
+  position: relative;
   top: 0;
   left: 0;
   display: inline-block;
 }
 
-#map {
+/* #map {
   width: 45.38vw;
-  /* align-content: center;*/
+  /* align-content: center;
   z-index: 50;
   position: absolute;
-}
+} */
 
 .center {
   display: block;
@@ -336,9 +366,9 @@ ul li {
 #dot {
   cursor: pointer;
 }
-#plate {
+/* #plate {
   padding-bottom: 5%;
-}
+} */
 
 /** process **/
 #processId img {

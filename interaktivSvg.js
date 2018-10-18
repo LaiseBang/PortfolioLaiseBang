@@ -14,8 +14,8 @@ async function runProgram() {
   /*svg skal tolkes som tekst*/
   let svg = await mySvg.text();
 
-  document.querySelector("#map").innerHTML = svg;
-
+  //document.querySelector("#map").innerHTML = svg;
+  document.querySelector("#map").insertAdjacentHTML("afterbegin", svg);
   //2. find infobokse og skjul dem
 
   let tekst_1 = document.querySelector("#map #tekstboks1");
