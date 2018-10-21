@@ -4,11 +4,6 @@
 }
 
 @font-face {
-  font-family: "fullhouse";
-  src: url("font/fullhouse-webfont.woff") format("woff");
-}
-
-@font-face {
   font-family: "Ubuntu_mono_regular";
   src: url("font/ubuntu/ubuntumono-r-webfont.woff2") format("woff2");
 }
@@ -61,7 +56,9 @@ p {
   font-size: 1.2rem;
   font-family: Ubuntu_mono_regular;
 }
-
+button {
+  cursor: pointer;
+}
 a:link {
   text-decoration: none;
 }
@@ -76,18 +73,19 @@ ul li {
   font-size: 1.2rem;
 }
 .textbox {
-  -webkit-box-shadow: 2px 2px 4px 5px #ccc; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-  -moz-box-shadow: 2px 2px 4px 5px #ccc; /* Firefox 3.5 - 3.6 */
-  box-shadow: 2px 2px 4px 5px #ccc; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-  height: 100%;
+  -webkit-box-shadow: 1px 1px 3px 4px #ccc; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow: 1px 1px 3px 4px #ccc; /* Firefox 3.5 - 3.6 */
+  box-shadow: 1px 1px 3px 4px #ccc; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  height: 95%;
   padding: 10px;
 }
 
 #stillId .textbox,
-#processId .textbox {
-  -webkit-box-shadow: 2px 2px 4px 5px #1b6a7c; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-  -moz-box-shadow: 2px 2px 4px 5px #1b6a7c; /* Firefox 3.5 - 3.6 */
-  box-shadow: 2px 2px 4px 5px #1b6a7c; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+#processId .textbox,
+#cvId .textbox {
+  -webkit-box-shadow: 1px 1px 3px 4px #1b6a7c; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow: 1px 1px 3px 4px #1b6a7c; /* Firefox 3.5 - 3.6 */
+  box-shadow: 1px 1px 3px 4px #1b6a7c; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
 
 .iframe_container {
@@ -105,32 +103,6 @@ ul li {
   border: 0;
 }
 
-/** transform text on hover *
-.left a:hover {
-  transform: rotate(-10deg) scale(1.2);
-}
-
-.right a:hover {
-  transform: rotate(10deg) scale(1.2);
-}
-
-/** animate the rotation *
-.left a:hover {
-  /*Transition*
-  transition: All 0.5s ease;
-
-  /*Transform*
-  transform: rotate(-10deg) scale(1.2);
-}
-
-.right a:hover {
-  /*Transition*
-  transition: All 0.5s ease;
-
-  /*Transform*
-  transform: rotate(10deg) scale(1.2);
-}  */
-
 /*** top grid ***/
 .container {
   display: grid;
@@ -143,9 +115,10 @@ ul li {
   grid-template-columns: repeat(5, 1fr);
   padding-bottom: 4%;
 
-  grid-template-rows: 25vh 35vh 35vh;
-  grid-gap: 2.5vh;
+  grid-template-rows: 25vh 29.5vh 29.5vh;
+  grid-gap: 6vh;
   grid-template-columns: 22vw repeat(3, 1fr) 22vw;
+  position: relative;
 }
 
 .logo {
@@ -165,7 +138,8 @@ ul li {
 .cv,
 .animation,
 .still,
-.svg {
+.svg,
+.process {
   background-size: cover;
   border-radius: 50%;
   justify-self: center;
@@ -181,7 +155,7 @@ ul li {
 
 .cv {
   grid-area: cv;
-  background-image: url();
+  background-image: url(images/gif/cv.gif);
 }
 
 .animation {
@@ -196,19 +170,14 @@ ul li {
 
 .svg {
   grid-area: svg;
-  background-image: url(images/gif/svg.gif);
+  background-image: url(images/gif/svg_smal.gif);
 }
 
 .process {
   grid-area: process;
   background-image: url(images/gif/idea.gif);
-  border-radius: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  justify-self: center;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
 }
 
 /*** svg **/
@@ -271,6 +240,15 @@ ul li {
   grid-column: 2/3;
   padding: 4%;
 }
+
+#img_container {
+  grid-column: 1/2;
+}
+
+#text_container {
+  grid-column: 2/3;
+  background-color: white;
+}
 /* 
 #videoId iframe,
 #cvId iframe,
@@ -292,43 +270,8 @@ ul li {
   max-height: 500px;
   width: 100%;
   height: 100%;
-  min-width: 625px;
 }
 
-/* I got this from w3 school slider on watercolor paintings **/
-* {
-  box-sizing: border-box;
-}
-
-.img-comp-container {
-  position: relative;
-  height: 46vh; /*should be the same height as the images*/
-}
-
-.img-comp-img {
-  position: absolute;
-  width: auto;
-  height: 100%;
-  overflow: hidden;
-}
-
-.img-comp-img img {
-  display: block;
-  /*vertical-align: middle;*/
-}
-
-.img-comp-slider {
-  position: absolute;
-  z-index: 9;
-  cursor: ew-resize;
-  /*set the appearance of the slider:*/
-  width: 40px;
-  height: 40px;
-  background-color: #279bd8;
-  opacity: 0.7;
-  border-radius: 50%;
-}
-/** end w3 school **/
 /** section svg **/
 
 #svgId {
@@ -391,4 +334,219 @@ ul li {
 .contact h2 {
   text-align: left;
   padding: 0;
+}
+
+/* borrowed from https://codepen.io/bamf/pen/jEpxOX*/
+@import "lesshat";
+
+.ba-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.ba-slider img {
+  width: 100%;
+  display: block;
+}
+
+.resize {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
+}
+
+.handle {
+  /* Thin line seperator */
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  margin-left: -2px;
+
+  background: rgba(0, 0, 0, 0.5);
+  cursor: ew-resize;
+}
+
+.handle:after {
+  /* Big orange knob  */
+  position: absolute;
+  top: 50%;
+  width: 64px;
+  height: 64px;
+  margin: -32px 0 0 -32px;
+
+  content: "\21d4";
+  color: #dfd2c3;
+  font-weight: bold;
+  font-size: 36px;
+  text-align: center;
+  line-height: 64px;
+
+  background: #1b6a7c; /* @orange */
+  border: 1px solid #10404b; /* darken(@orange, 5%) */
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3),
+    inset 0 2px 0 rgba(255, 255, 255, 0.5), inset 0 60px 50px -30px #2aa3be; /* lighten(@orange, 20%)*/
+}
+
+.draggable:after {
+  width: 48px;
+  height: 48px;
+  margin: -24px 0 0 -24px;
+  line-height: 48px;
+  font-size: 30px;
+}
+
+/* end borrowed from https://codepen.io/bamf/pen/jEpxOX*/
+
+#cvId img {
+  width: 100%;
+}
+
+#cvId .textbox {
+  background-color: white;
+}
+
+#cv_button {
+  height: 50px;
+  width: 50px;
+  border-style: none;
+  background-color: #35222f;
+  color: #dfd2c3;
+}
+
+/* media query*/
+/* mobile 0-599 */
+@media screen and (max-width: 599px) {
+  .container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-areas:
+      ". logo logo ."
+      ". cv video ."
+      ". still svg ."
+      ". process animation .";
+    grid-template-rows: 33vh 21vh 21vh 21vh;
+    grid-template-columns: 1.5vw 1fr 1fr 1.5vw;
+    position: relative;
+  }
+  .logo img {
+    max-width: 100%;
+  }
+  h1 {
+    font-size: 1.7em;
+  }
+}
+/* tablet 600 - 899 */
+@media screen and (min-width: 600px) {
+  .container {
+    grid-template-rows: 25vh 24vh 23vh;
+    grid-template-columns: 5% repeat(3, 1fr) 5%;
+    grid-gap: 1vh;
+  }
+  /*  .process {
+    background-size: cover;
+  } */
+  .logo img {
+    max-width: 50%;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+  #stillId img {
+    min-height: auto;
+    height: auto;
+  }
+}
+
+/* 900 - 1199 */
+@media screen and (min-width: 900px) {
+  .container {
+    grid-template-rows: 25vh 25vh 25vh;
+    grid-gap: 3vh;
+    grid-template-columns: 15vw repeat(3, 1fr) 15vw;
+  }
+
+  .logo img {
+    max-width: 50%;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+  #stillId img {
+    min-height: auto;
+    height: auto;
+  }
+}
+
+/*1200 - 1500 */
+@media screen and (min-width: 1200px) {
+  .container {
+    grid-template-rows: 25vh 28vh 28vh;
+    grid-template-columns: 10% repeat(3, 1fr) 10%;
+    grid-gap: 7vh;
+  }
+
+  .logo img {
+    max-width: 50%;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+  #stillId img {
+    min-height: 375px;
+    height: 100%;
+  }
+}
+
+/*1500 - 1800 */
+@media screen and (min-width: 1500px) {
+  .container {
+    grid-template-rows: 25vh 28vh 28vh;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 3vh;
+  }
+
+  .logo img {
+    max-width: 50%;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+}
+
+/* 1800 - */
+
+@media screen and (min-width: 1800px) {
+  .container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-areas:
+      ". logo logo logo . "
+      ". cv video still ."
+      ". svg process animation .";
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    padding-bottom: 4%;
+
+    grid-template-rows: 25vh 29.5vh 29.5vh;
+    grid-gap: 6vh;
+    grid-template-columns: 22vw repeat(3, 1fr) 22vw;
+    position: relative;
+  }
+  .logo img {
+    max-width: 45%;
+  }
+  h1 {
+    font-size: 2.5em;
+  }
 }
