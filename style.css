@@ -441,6 +441,27 @@ ul li {
   h1 {
     font-size: 1.7em;
   }
+
+  #cvId,
+  #videoId,
+  #stillId,
+  #svgId,
+  #processId,
+  #animationId {
+    display: block;
+  }
+
+  #stillId img {
+    min-height: auto;
+  }
+
+  .handle:after {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    margin: -32px 0 0 -26px;
+  }
 }
 /* tablet 600 - 899 */
 @media screen and (min-width: 600px) {
