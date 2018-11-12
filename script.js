@@ -1,24 +1,25 @@
 "use strict";
 
-/* import TweenMax from "gsap/TweenMax";
-
 window.addEventListener("DOMContentLoaded", init);
+let topnav = document.getElementById("topnav");
+let imageNav = document.getElementsByClassName("container");
 
 function init() {
-  console.log("init");
-  let ink = document.getElementById("ink");
+  topnav.style.visibility = "hidden";
+}
 
-  TweenMax.staggerFrom(
-    "#laiseInked #ink, #laise",
-    2,
-    {
-      y: -1552,
-      opacity: 0,
-      ease: Power4.easeOut
-    },
-    0.1
-  );
-} */
+$(window).scroll(function() {
+  var hT = $("#cvId").offset().top,
+    hH = $("#cvId").outerHeight(),
+    wH = $(window).height(),
+    wS = $(this).scrollTop();
+  console.log(hT - wH, wS);
+  if (wS > hT + hH - wH) {
+    topnav.style.visibility = "visible";
+  } else if (wS < hT + hH - wH) {
+    topnav.style.visibility = "hidden";
+  }
+});
 
 /* borrowed from https://codepen.io/bamf/pen/jEpxOX*/
 // Call & init

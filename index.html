@@ -5,68 +5,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Portfolio - Laise Bang</title>
     <link rel="stylesheet" href="style.css" type="text/css" charset="utf-8">
+    <link rel="shortcut icon" type="Image/png" href="images/favicon_new.png" />
+    <link rel="shortcut icon" type="image/png" href="http://example.com/favicon.png" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
+    <nav id="topnav" class="revealOnScroll">
+        <ul id=menu>
+            <a href="index.html">
+                <li>
+                    <h5>Home</h5>
+                </li>
+            </a>
+            <a href="#cvId">
+                <li>
+                    <h5>About Me</h5>
+                </li>
+            </a>
+            <a href="#videoId">
+                <li>
+                    <h5>Video</h5>
+                </li>
+            </a>
+            <a href="#stillId">
+                <li>
+                    <h5>Images</h5>
+                </li>
+            </a>
+            <a href="#svgId">
+                <li>
+                    <h5>SVG</h5>
+                </li>
+            </a>
+            <a href="#processId">
+                <li>
+                    <h5>Process</h5>
+                </li>
+            </a>
+            <a href="#animationId">
+                <li>
+                    <h5>Animation</h5>
+                </li>
+            </a>
+        </ul>
+    </nav>
+
     <nav class="container">
         <header class="logo">
             <a href="index.html"> <img src="images/laise_ink_blue_Ubutu.png" alt="">
             </a>
         </header>
 
-        <div class="cv">
-            <a href="#cvId">
-                <div class="overlay">
-                    <h1>About Me</h1>
-                </div>
-            </a>
-        </div>
 
-        <div class="video">
-            <a href="#videoId">
-                <div class="overlay">
-                    <h1>Video</h1>
-                </div>
-            </a>
-        </div>
+        <a href="#cvId" class="cv box">
+            <div class="overlay">
+                <h1>About Me</h1>
+            </div>
+        </a>
 
-        <div class="still">
-            <a href="#stillId">
-                <div class="overlay">
-                    <h1>Images</h1>
-                </div>
-            </a>
-        </div>
-        <div class="svg">
-            <a href="#svgId">
-                <div class="overlay">
-                    <h1>SVG</h1>
-                </div>
-            </a>
-        </div>
-        <div class="process">
-            <a href="#processId">
-                <div class="overlay">
-                    <h1>Process</h1>
-                </div>
-            </a>
-        </div>
-        <div class="animation">
-            <a href="#animationId">
-                <div class="overlay">
-                    <h1>Animation</h1>
-                </div>
-            </a>
-        </div>
+        <a href="#videoId" class="video box">
+            <div class="overlay">
+                <h1>Video</h1>
+            </div>
+        </a>
+
+        <a href="#stillId" class="still box">
+            <div class="overlay">
+                <h1>Images</h1>
+            </div>
+        </a>
+
+        <a href="#svgId" class="svg box">
+            <div class="overlay">
+                <h1>SVG</h1>
+            </div>
+        </a>
+
+        <a href="#processId" class="process box">
+            <div class="overlay">
+                <h1>Process</h1>
+            </div>
+        </a>
+
+        <a href="#animationId" class="animation box">
+            <div class="overlay">
+                <h1>Animation</h1>
+            </div>
+        </a>
     </nav>
 
     <section id="cvId">
         <h2>About Laise Bang</h2>
         <div class="column1 image_cv">
-            <img src="images/L_shaped-photo_WITH-NAME.png" alt="">
+            <img src="images/selvportraet_landscape.png" alt="">
         </div>
         <div class="column2">
             <div class="textbox">
@@ -81,7 +115,7 @@
                 <p>finding effects and implementing them. I think I am very good at creating single pieces, but
                     sometimes find it challenging to create a hole website with one common line / style, and this is
                     something that I am working on.</p>
-                <a href="index.html"> <button id="cv_button">CV</button></a>
+                <a href="CV_opacity100.pdf"> <button id="cv_button">CV pdf</button></a>
             </div>
         </div>
         </div>
@@ -198,17 +232,6 @@
                 </div>
                 <span class="handle"></span>
             </div>
-
-
-            <!--       <div class="img-comp-container">
-                <div class="img-comp-img">
-                    <img src="images/watercolor_coral_original.jpg" width="625" height="375">
-                </div>
-
-                <div class="img-comp-img img-comp-overlay">
-                    <img src="images/watercolor_coral_earring.jpg" width="625" height="375">
-                </div>
-            </div> -->
         </div>
         <div class="column2">
             <div class="textbox">
@@ -339,6 +362,8 @@
             <a href="https://www.linkedin.com/in/laise-bang-henriksen-26a3779/" target="blank"> <img src="images/linkedIn.png"
                     alt="linkedIn link"></a>
             <a href="https://github.com/LaiseBang" target="blank"><img src="images/github.png" alt="github link"></a>
+            <a href="https://www.youtube.com/channel/UCyV_ci3BkgsU93sCSJmcIRA?view_as=subscriber" target="blank"><img
+                    src="images/youtube_logo.png" alt="link til Youtube"> </a>
         </div>
     </footer>
 
