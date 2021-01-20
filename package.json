@@ -9,7 +9,7 @@
   "author": "Laise Bang Henriksen",
   "license": "ISC",
   "dependencies": {
-    "gsap": "^2.0.2"
+    "gsap": "^3.6.0"
   },
   "devDependencies": {
     "@types/gsap": "^1.19.2",
